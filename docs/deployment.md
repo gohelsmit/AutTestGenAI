@@ -55,4 +55,7 @@ If a deployment shows **Error** in Vercel (e.g. for a commit like "Merge remote 
    Ensure `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` are set for Production (and Preview if you use preview URLs).
 
 4. **Build logs**  
-   Open the failed deployment and check **Building** / **Logs** for the exact error (e.g. missing env, TypeScript error, or "no such file").
+   Open the failed deployment and check **Building** / **Logs** for the exact error (e.g. missing env, TypeScript error, or "no such file"). The message "Command \"npm run build\" exited with 1" is only the exit code—scroll up in the log to see the real TypeScript or build error.
+
+5. **Ensure latest code is deployed**  
+   Push and deploy the commit that includes the `server.ts` fetch type fix (parameter types for `url` and `init`). If the build was from an older commit, redeploy after pushing.
