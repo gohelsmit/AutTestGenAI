@@ -38,3 +38,21 @@ If you only use **email/password** login, always open the app at `/login` and si
 - [ ] Env vars set in Vercel
 - [ ] AI service deployed and URL configured (if used)
 - [ ] First user created and role set in `profiles`
+
+## Vercel troubleshooting (deployment shows "Error")
+
+If a deployment shows **Error** in Vercel (e.g. for a commit like "Merge remote main, keep NextGen README"):
+
+1. **Set Root Directory**  
+   **Project → Settings → General → Root Directory**  
+   Set to `frontend` and save. Without this, Vercel builds from the repo root where there is no Next.js app, so the build fails.
+
+2. **Redeploy**  
+   **Deployments** tab → open the failed deployment → **Redeploy**, or push a new commit.
+
+3. **Environment variables**  
+   **Settings → Environment Variables**  
+   Ensure `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` are set for Production (and Preview if you use preview URLs).
+
+4. **Build logs**  
+   Open the failed deployment and check **Building** / **Logs** for the exact error (e.g. missing env, TypeScript error, or "no such file").
