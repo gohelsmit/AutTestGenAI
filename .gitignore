@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Next.js
+frontend/.next/
+frontend/.next-dev.log
+frontend/.next-dev.err.log
+frontend/.next-start.log
+frontend/.next-start.err.log
+
+# Env (do not commit secrets)
+.env
+.env.local
+.env.*.local
+frontend/.env.local
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# IDE / OS
+.codex-tmp/
+.DS_Store
+*.log
